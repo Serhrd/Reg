@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Registration</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <?php
+    if($_COOKIE['user'] ==''):
+    ?>
+    <h1> Регитсрация</h1>
+    <form action="reg.php" method="post">
+    <input type="text" id="login" name="login" placeholder="Логин">
+    <br>
+    <br>
+    <input type="text" id="password" name="password" placeholder="Пароль">
+    <br>
+    <br>
+    <button>Регитсрация</button>
+</form>
+    <h1> Вход</h1>
+    <form action="auth.php" method="post">
+    <input type="text" id="login" name="login" placeholder="Логин">
+    <br>
+    <br>
+    <input type="text" id="password" name="password" placeholder="Пароль">
+    <br>
+    <br>
+    <button>Вход</button>
+</form>
+
+<?php else: ?>
+    <p> Здравствуйте <?=$_COOKIE['user']?>. <button ><a href = "exit.php"> Вйти из аккаунта</a></button></p>
+    
+<?php endif;?>
+</body>
+</html>
